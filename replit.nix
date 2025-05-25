@@ -1,0 +1,45 @@
+
+{ pkgs }: {
+	deps = [
+		pkgs.nodejs_18
+		pkgs.nodePackages.npm
+		pkgs.nodePackages.typescript-language-server
+		pkgs.python3
+		pkgs.pkg-config
+		pkgs.libsecret
+		pkgs.nss
+		pkgs.glib
+		pkgs.gtk3
+		pkgs.at-spi2-atk
+		pkgs.libdrm
+		pkgs.xorg.libXcomposite
+		pkgs.xorg.libXdamage
+		pkgs.xorg.libXrandr
+		pkgs.mesa
+		pkgs.alsaLib
+		pkgs.glibc
+		pkgs.xvfb-run
+		pkgs.xorg.xorgserver
+		pkgs.cairo
+		pkgs.pango
+		pkgs.harfbuzz
+		pkgs.gdk-pixbuf
+		pkgs.fontconfig
+		pkgs.freetype
+		pkgs.dbus
+		pkgs.xorg.libX11
+		pkgs.xorg.libXext
+		pkgs.xorg.libXfixes
+		pkgs.xorg.libXi
+		pkgs.xorg.libXtst
+		pkgs.cups
+		pkgs.expat
+		pkgs.libuuid
+		pkgs.gobject-introspection
+		pkgs.atk
+		pkgs.at-spi2-core
+		pkgs.libsoup
+		pkgs.webkitgtk
+		pkgs.glib.dev
+	];
+}

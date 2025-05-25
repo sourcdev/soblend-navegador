@@ -1,0 +1,20 @@
+directories:
+  output: dist
+  buildResources: build
+appId: com.soblend.navegador
+productName: Soblend Navegador
+files:
+  - filter:
+      - src/**/*
+      - assets/**/*
+      - extensions/**/*
+      - node_modules/**/*
+win:
+  target: nsis
+  icon: icon.ico
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+electronVersion: 27.3.11
