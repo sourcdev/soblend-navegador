@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soblend Navegador</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="../../assets/icon.png">
+</head>
+<body>
+    <div class="browser-container">
+        <!-- Navigation Bar -->
+        <div class="nav-bar">
+            <div class="nav-controls">
+                <button id="back-btn" class="nav-btn" title="Atrás">⟨</button>
+                <button id="forward-btn" class="nav-btn" title="Adelante">⟩</button>
+                <button id="refresh-btn" class="nav-btn" title="Actualizar">↻</button>
+                <button id="home-btn" class="nav-btn" title="Inicio">🏠</button>
+            </div>
+            
+            <div class="address-bar-container">
+                <input type="text" id="address-bar" placeholder="Buscar en Soblend o escribir URL..." />
+                <button id="go-btn" class="go-btn">→</button>
+            </div>
+            
+            <div class="browser-controls">
+                <button id="extensions-btn" class="control-btn" title="Extensiones">🧩</button>
+                <button id="downloads-btn" class="control-btn" title="Descargas">📥</button>
+                <button id="settings-btn" class="control-btn" title="Configuración">⚙️</button>
+                <button id="menu-btn" class="control-btn" title="Menú">☰</button>
+            </div>
+        </div>
+
+        <!-- Tab Bar -->
+        <div class="tab-bar">
+            <div class="tabs-container" id="tabs-container">
+                <div class="tab active" data-tab-id="0">
+                    <span class="tab-title">Nueva Pestaña</span>
+                    <button class="tab-close">×</button>
+                </div>
+            </div>
+            <button id="new-tab-btn" class="new-tab-btn">+</button>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content-area">
+            <div class="tab-content active" id="tab-content-0">
+                <div class="start-page">
+                    <div class="start-page-header">
+                        <img src="../../assets/icon.png" alt="Soblend" class="start-logo">
+                        <h1>Bienvenido a Soblend Navegador</h1>
+                        <p>El navegador más avanzado con sistema de extensiones integrado</p>
+                    </div>
+                    
+                    <div class="quick-actions">
+                        <div class="action-card" onclick="openExtensionStore()">
+                            <h3>🧩 Tienda de Extensiones</h3>
+                            <p>Descarga y gestiona extensiones</p>
+                        </div>
+                        <div class="action-card" onclick="openSettings()">
+                            <h3>⚙️ Configuración</h3>
+                            <p>Personaliza tu experiencia</p>
+                        </div>
+                        <div class="action-card" onclick="openHistory()">
+                            <h3>📋 Historial</h3>
+                            <p>Ver sitios visitados</p>
+                        </div>
+                        <div class="action-card" onclick="openDownloads()">
+                            <h3>📥 Descargas</h3>
+                            <p>Gestionar archivos descargados</p>
+                        </div>
+                    </div>
+
+                    <div class="search-section">
+                        <h2>Buscar en la Web</h2>
+                        <div class="search-engines">
+                            <button class="search-engine active" data-engine="soblend">Soblend</button>
+                            <button class="search-engine" data-engine="google">Google</button>
+                            <button class="search-engine" data-engine="bing">Bing</button>
+                            <button class="search-engine" data-engine="duckduckgo">DuckDuckGo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Extension Manager Modal -->
+        <div id="extension-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Administrador de Extensiones</h2>
+                    <span class="modal-close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="extension-tabs">
+                        <button class="ext-tab active" data-tab="installed">Instaladas</button>
+                        <button class="ext-tab" data-tab="store">Tienda</button>
+                        <button class="ext-tab" data-tab="develop">Desarrollar</button>
+                    </div>
+                    <div id="extensions-content">
+                        <div id="installed-extensions"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Downloads Modal -->
+        <div id="downloads-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Gestor de Descargas</h2>
+                    <span class="modal-close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div id="downloads-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+    <script src="extensions.js"></script>
+    <script src="downloads.js"></script>
+</body>
+</html>
